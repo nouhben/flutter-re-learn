@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   final Map<String, dynamic> _json = {'name': 'Amin', 'age': 69, 'w': 0};
   (String, int) _getInfo(Map<String, dynamic> json) =>
-      (json['Name'], json['age']);
+      (json['name'] as String, json['age'] as int);
 
   Iterable<int> myGen(int count) sync* {
     int i = _counter;
