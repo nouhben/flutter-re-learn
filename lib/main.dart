@@ -58,6 +58,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  final Map<String, dynamic> _json = {'name': 'Amin', 'age': 69, 'w': 0};
+  (String, int) _getInfo(Map<String, dynamic> json) =>
+      (json['Name'], json['age']);
 
   Iterable<int> myGen(int count) sync* {
     int i = _counter;
@@ -94,6 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    var (name, age) = _getInfo(_json);
     return Scaffold(
       appBar: AppBar(
         // TRY THIS: Try changing the color here to a specific color (to
@@ -123,6 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text('$name, $age'),
             const Text(
               'You have pushed the button this many times:',
             ),
